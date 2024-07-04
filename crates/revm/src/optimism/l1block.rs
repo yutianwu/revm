@@ -168,9 +168,7 @@ impl L1BlockInfo {
             return U256::ZERO;
         }
 
-        if spec_id.is_enabled_in(SpecId::FJORD) {
-            self.calculate_tx_l1_cost_fjord(input)
-        } else if spec_id.is_enabled_in(SpecId::ECOTONE) {
+        if spec_id.is_enabled_in(SpecId::ECOTONE) {
             self.calculate_tx_l1_cost_ecotone(input, spec_id)
         } else {
             self.calculate_tx_l1_cost_bedrock(input, spec_id)
